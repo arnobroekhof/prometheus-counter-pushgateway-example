@@ -16,7 +16,6 @@ spec:
             cronjob_name: prometheus-counter-pushgateway-example
             team: some-team-name
         spec:
-          backoffLimit: 0
           containers:
           - name: prometheus-counter-pushgateway-example
             image: ghcr.io/arnobroekhof/prometheus-counter-pushgateway-example:main
