@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: prometheus-counter-pushgateway-example
+  namespace: default
+
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            cronjob_name: prometheus-counter-pushgateway-example
+            team: some-team-name
+        spec:
+          containers:
+          - name: prometheus-counter-pushgateway-example
+            image: ghcr.io/arnobroekhof/prometheus-counter-pushgateway-example:main
+            imagePullPolicy: Always
+          restartPolicy: OnFailure
