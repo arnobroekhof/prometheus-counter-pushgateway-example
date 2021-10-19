@@ -21,4 +21,4 @@ spec:
           - name: prometheus-counter-pushgateway-example
             image: ghcr.io/arnobroekhof/prometheus-counter-pushgateway-example:main
             imagePullPolicy: Always
-          restartPolicy: OnFailure
+          restartPolicy: Never
