@@ -5,7 +5,7 @@ from prometheus_client import CollectorRegistry, Counter, push_to_gateway
 
 
 def main():
-    gateway = os.getenv('PUSH_GATEWAY_URI', 'prometheus-pushgateway.prometheus')
+    gateway = os.getenv('PUSH_GATEWAY_URI', 'prometheus-pushgateway.prometheus:9091')
     registry = CollectorRegistry()
     counter = Counter('example_counter_pushed_cronjob_processed_total', 'Total processed by the push gateway',
                       registry=registry)
