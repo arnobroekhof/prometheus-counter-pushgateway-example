@@ -21,6 +21,6 @@ spec:
             image: ghcr.io/arnobroekhof/prometheus-counter-pushgateway-example:main
             env:
             - name: PUSH_COUNT
-              value: "10"
+              value: 10
             imagePullPolicy: Always
           restartPolicy: Never
