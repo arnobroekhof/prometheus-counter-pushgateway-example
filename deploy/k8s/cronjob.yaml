@@ -4,7 +4,6 @@ kind: CronJob
 metadata:
   name: prometheus-counter-pushgateway-example
   namespace: default
-
 spec:
   schedule: "*/1 * * * *"
   concurrencyPolicy: Forbid
