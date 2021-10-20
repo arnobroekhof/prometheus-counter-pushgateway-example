@@ -19,5 +19,8 @@ spec:
           containers:
           - name: prometheus-counter-pushgateway-example
             image: ghcr.io/arnobroekhof/prometheus-counter-pushgateway-example:main
+            env:
+            - name: PUSH_COUNT
+              value: "10"
             imagePullPolicy: Always
           restartPolicy: Never
