@@ -1,0 +1,21 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    source: kube-monitoring
+  name: pushgatewaycronjobexample
+  namespace: prometheus
+spec:
+  groups:
+    - name: cronjobs
+      rules:
+        - alert: "PushGateway_Example_Metrics_Count_Process_error"
+          expr: sum(example_counter_pushed_cronjob_processed_total) != 10
+          for: 5m
+          labels:
+            service: k8s
+            priority: "P2"
+          annotations:
+            description: Cronjob Push Gateway Example did not process 10 events
+            summary: Cronjob Push Gateway Example did not process 10 events
