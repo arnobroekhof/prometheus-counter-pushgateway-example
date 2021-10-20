@@ -10,8 +10,6 @@ def main():
     print(f'Using counter of {push_count}')
     registry = CollectorRegistry()
     counter = Counter('example_counter_pushed_cronjob_processed_total', 'Total processed by the push gateway',
-                      labelnames=['cronjob'],
-                      _labelvalues=['prometheus-counter-pushgateway-example'],
                       registry=registry,)
     counter.inc(int(push_count))
     push_to_gateway(gateway, job='prometheus-counter-pushgateway-example', registry=registry)
